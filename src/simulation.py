@@ -65,7 +65,7 @@ def attempt_shot(offensive, free_throw_prob, foul_probability):
             # Falló sin foul, se puede intentar obtener un rebote ofensivo
             return 0, False
 
-# Función que simula una posesión completa (incluye turnover, tiros, rebote)
+# Función que simula una posesión completa 
 def simulate_possession(offensive, defensive, free_throw_prob=0.80,
                         foul_probability=0.15, turnover_prob=0.15,
                         offensive_rebound_prob=0.30):
@@ -80,7 +80,7 @@ def simulate_possession(offensive, defensive, free_throw_prob=0.80,
             defensive.steals += 1
         return 0, possession_time
 
-    # Se inicia la posesión: intento de tiro (puede incluir foul)
+    # Se inicia la posesión: intento de tiro 
     while True:
         shot_points, possession_ends = attempt_shot(offensive, free_throw_prob, foul_probability)
         points += shot_points
@@ -98,7 +98,7 @@ def simulate_possession(offensive, defensive, free_throw_prob=0.80,
                 defensive.defensive_rebounds += 1
                 return points, possession_time
 
-# Función que simula un cuarto de 12 minutos (720 segundos)
+# Función que simula un cuarto de 12 minutos (total de 720 segundos)
 def simulate_quarter(teamA, teamB, quarter_duration=720):
     current_time = 0
     # Asignar aleatoriamente qué equipo inicia la posesión
@@ -191,7 +191,7 @@ def simulate_multiple_games(n):
 
     return averagesA, averagesB, win_rateA, win_rateB
 
-# Simulación de 1000 partidos y presentación de promedios
+
 if __name__ == "__main__":
     num_games = 1000
     averagesA, averagesB, win_rateA, win_rateB = simulate_multiple_games(num_games)
